@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Team Selection</h2>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.existing_team.label }}
+            {{ form.existing_team() }}
+        </div>
+        <div>
+            {{ form.new_team_name.label }}
+            {{ form.new_team_name() }}
+        </div>
+        <div>{{ form.submit() }}</div>
+    </form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>User Details</h2>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <div>{{ form.nombre.label }} {{ form.nombre() }}</div>
+        <div>{{ form.correo_institucional.label }} {{ form.correo_institucional() }}</div>
+        <div>{{ form.edad.label }} {{ form.edad() }}</div>
+        <div>{{ form.universidad.label }} {{ form.universidad() }}</div>
+        <div>{{ form.carrera.label }} {{ form.carrera() }}</div>
+        <div>{{ form.sexo.label }} {{ form.sexo() }}</div>
+        <div>{{ form.participado_hackathon.label }} {{ form.participado_hackathon() }}</div>
+        <div>{{ form.submit() }}</div>
+    </form>
+{% endblock %}

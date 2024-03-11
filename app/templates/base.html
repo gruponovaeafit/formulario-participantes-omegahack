@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Your Site Name{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Add additional CSS files or external references here -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    {% if show_progress %}
+    <div class="container mt-3">
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: {{ progress_percentage }}%;" aria-valuenow="{{ progress_percentage }}" aria-valuemin="0" aria-valuemax="100">{{ progress_percentage }}%</div>
+        </div>
+    </div>
+    {% endif %}
+
+    <header>
+        <!-- Header content goes here, like navigation menu -->
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Page-specific content will be inserted here -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <!-- Footer content goes here -->
+        <p>&copy; 2024 NOVA EAFIT</p>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- Add your JavaScript files or scripts here -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Select Your Role</h2>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.role.label }}
+            {% for subfield in form.role %}
+                <div>
+                    {{ subfield }} {{ subfield.label }}
+                </div>
+            {% endfor %}
+        </div>
+        <div>{{ form.submit() }}</div>
+    </form>
+{% endblock %}
