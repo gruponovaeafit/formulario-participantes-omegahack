@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Registration Complete</h2>
+<p>Thank you for registering, {{ participant.nombre }}!</p>
+<!-- Display any additional information relevant to the participant's registration -->
+
+<p>
+    <a href="{{ url_for('index') }}">Return to the homepage</a>
+</p>
+{% endblock %}
