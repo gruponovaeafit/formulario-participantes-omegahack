@@ -14,6 +14,8 @@ def main_page():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegistrationTypeForm()
+    # Create a variable that will allow to control only user that started from the main page can access the registration
+    session['started_registration'] = True
     if form.validate_on_submit():
         # Store the registration type in the session
         session['registration_type'] = form.registration_type.data
@@ -25,6 +27,11 @@ def register():
 
 @app.route('/user_details', methods=['GET', 'POST'])
 def user_details():
+    # Is the user allowed to access this page?
+    if not session.get('started_registration'):
+        flash('Please start the registration process from the main page.', 'warning')
+        return redirect(url_for('main_page'))
+
     form = UserDetailsForm()
     print(form.validate_on_submit())
     if form.validate_on_submit():
@@ -46,13 +53,12 @@ def user_details():
 
 @app.route('/role_selection', methods=['GET', 'POST'])
 def role_selection():
-    # Ensure there's an ongoing registration process
-    if 'participant_id' not in session:
-        flash("Please start the registration process.", "warning")
-        return redirect(url_for('register'))
+    if not session.get('started_registration'):
+        flash('Please start the registration process from the main page.', 'warning')
+        return redirect(url_for('main_page'))
     
     form = RoleSelectionForm()
-    form.role.choices = [(1, 1), (2, 2), (3, 3)]
+    form.role.choices = [(role.id, role.nombre) for role in Role.query.order_by(Role.nombre).all()]
 
     if form.validate_on_submit():
         # Store the selected role in the session
@@ -71,6 +77,10 @@ def role_selection():
 
 @app.route('/team_selection', methods=['GET', 'POST'])
 def team_selection():
+    if not session.get('started_registration'):
+        flash('Please start the registration process from the main page.', 'warning')
+        return redirect(url_for('main_page'))
+    
     form = JoinTeamForm()
     form.existing_team.choices = [(0, 'Select a Team')] + [(team.id, team.nombre) for team in Equipo.query.order_by(Equipo.nombre).all()]
 
@@ -98,6 +108,9 @@ def team_selection():
 
 @app.route('/final_submit', methods=['GET'])
 def final_submit():
+    if not session.get('started_registration'):
+        flash('Please start the registration process from the main page.', 'warning')
+        return redirect(url_for('main_page'))
     # Assuming all necessary data is stored in the session
     user_details = session.get('user_details')
     selected_role_id = session.get('selected_role_id')
