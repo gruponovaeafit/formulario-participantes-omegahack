@@ -2,7 +2,7 @@ from app import db
 
 class Equipo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    nombre = db.Column(db.String(128), unique=True, index=True)
+    nombre = db.Column(db.String(128), index=True)
     participantes = db.relationship('Participante', backref='equipo', lazy='dynamic')
 
     participantes = db.relationship('Participante', back_populates='equipo')

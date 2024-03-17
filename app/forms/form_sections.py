@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, RadioField, SelectField, BooleanField, IntegerField
 from wtforms.validators import DataRequired, Email, Optional
+from app.models import Universidad, Role, Equipo
 
 
 class MainPageForm(FlaskForm):
@@ -16,12 +17,7 @@ class UserDetailsForm(FlaskForm):
     nombre = StringField('Nombre', validators=[DataRequired()])
     correo_institucional = StringField('Correo Institucional', validators=[DataRequired(), Email()])
     edad = IntegerField('Edad', validators=[DataRequired()])
-    universidad = SelectField('Universidad', choices=[
-        ('', 'Seleccione una'),
-        ('uni1', 'Universidad 1'),
-        ('uni2', 'Universidad 2'),
-        # Add other universities here
-    ], validators=[DataRequired()])
+    universidad = SelectField('Universidad', coerce=int)  # Note the coerce=int for handling IDs
     carrera = StringField('Carrera', validators=[DataRequired()])
     sexo = SelectField('Sexo', choices=[
         ('', 'Seleccione uno'),
@@ -33,14 +29,13 @@ class UserDetailsForm(FlaskForm):
     participado_hackathon = BooleanField('He participado en otra hackathon')
     submit = SubmitField('Continuar')
 
+    def __init__(self, *args, **kwargs):
+        super(UserDetailsForm, self).__init__(*args, **kwargs)
+        self.universidad.choices = [(0, 'Seleccione una')] + [(u.id, u.nombre) for u in Universidad.query.order_by('nombre')]
+
 
 class RoleSelectionForm(FlaskForm):
-    role = RadioField('Select Your Role', choices=[
-        ('role1', 'Role 1'),
-        ('role2', 'Role 2'),
-        ('role3', 'Role 3'),
-        ('role4', 'Role 4')
-    ], validators=[DataRequired()])
+    role = RadioField('Seleccione su rol', choices=[], validators=[DataRequired()])
     submit = SubmitField('Continue')
 
 
@@ -48,3 +43,8 @@ class JoinTeamForm(FlaskForm):
     existing_team = SelectField('Join an Existing Team', coerce=int, validators=[Optional()])
     new_team_name = StringField('Or Create a New Team', validators=[Optional()])
     submit = SubmitField('Submit')
+
+    def __init__(self, *args, **kwargs):
+        super(JoinTeamForm, self).__init__(*args, **kwargs)
+        # Dynamically set choices for existing teams
+        self.existing_team.choices = [(0, 'Select a Team')] + [(team.id, team.nombre) for team in Equipo.query.order_by('nombre').all()]
