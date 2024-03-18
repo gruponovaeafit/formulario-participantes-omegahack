@@ -1,0 +1,257 @@
+body {
+   margin: 0;
+   padding: 0;
+   font-family: 'Montserrat', sans-serif;
+   font-style: normal;
+   background-image: url('/static/images/cuadros.png');
+   color: white;
+   display: flex;
+   flex-direction: column;
+   background-size: cover;
+}
+
+.container {
+   width: 100%;
+   max-width: 800px;
+   margin: 20px auto;
+   padding-top: 20px;
+}
+
+.progress-bar {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin: 20px 0;
+   padding: 10px;
+   position: relative;
+}
+
+.step {
+   width: 40px;
+   height: 40px;
+   background-color: #8B53EA;
+   border-radius: 50%;
+   color: white;
+   line-height: 40px;
+   text-align: center;
+   position: relative;
+   z-index: 2;
+   font-weight: bold;
+}
+
+.bar {
+   flex-grow: 2;
+   height: 10px;
+   padding-top: 2px;
+   margin: 10px;
+   background-color: #ffffff;
+   z-index: 1;
+   border-radius: 10px;
+}
+
+.active {
+   background-color: #4B0082;
+}
+
+.step.active {
+   background-color: #8B53EA;
+   margin: 10px;
+}
+
+.bar.active {
+   background: linear-gradient(to right, #8B53EA, #8B53EA 50%, white 50%, white 100%);
+}
+
+
+form {
+   padding: 20px;
+   margin-top: 20px;
+}
+
+.gradient-border-wrapper {
+   border-radius: 10px;
+   overflow: hidden;
+   padding: 1px;
+   margin: 10px;
+}
+
+.gradient-border-wrapper select {
+   -webkit-appearance: none;
+   background-color: transparent;
+   border: 2px solid #ffffff;
+   box-shadow: none;
+   color: white;
+   padding: 10px;
+   border-radius: 5px;
+}
+
+.gradient-border-wrapper select::-ms-expand {
+   display: none;
+}
+
+.gradient-border-wrapper select::-webkit-inner-spin-button,
+.gradient-border-wrapper select::-webkit-outer-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+}
+
+
+.gradient-border {
+   position: relative;
+   background: black;
+   padding: 10px;
+   margin: 0;
+   box-sizing: border-box;
+   border: 2px solid transparent;
+   -webkit-border-image: linear-gradient(145deg, #DE386A, #8B53EA, #5DC6ED) 1;
+   border-image: linear-gradient(145deg, #DE386A, #8B53EA, #5DC6ED) 1;
+}
+
+
+input[type="text"].gradient-border,
+input[type="email"].gradient-border,
+input[type="number"].gradient-border,
+select.gradient-border {
+   background:
+      linear-gradient(#000000 0 0) padding-box,
+      linear-gradient(145deg, #DE386A, #8B53EA, #5DC6ED) border-box;
+   color: #ffffffcd;
+   width: 100%;
+   padding: 15px;
+   border: 5px solid transparent;
+   border-radius: 15px;
+   display: inline-block;
+   margin: 10px 0;
+   font-size: 14px;
+   outline: none;
+}
+
+.checkbox-custom {
+   position: relative;
+   display: block;
+   user-select: none;
+   padding-left: 35px;
+   margin-top: 25px;
+   margin-bottom: 12px;
+   cursor: pointer;
+   font-size: 15px;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;/
+}
+
+.checkbox-custom input {
+   position: absolute;
+   opacity: 0;
+   cursor: pointer;
+   height: 0;
+   width: 0;
+}
+
+.checkbox-label .checkbox-custom-rect {
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 25px;
+   width: 25px;
+   background-color: #bbb;
+   border-radius: 50%;
+   transition: background-color 0.2s;
+}
+
+.checkbox-custom input:checked~.checkbox-custom-rect {
+   background-color: #78BD56;
+}
+
+footer {
+   text-align: center;
+   margin-top: 20px;
+   color: white;
+}
+
+
+select {
+   background-repeat: no-repeat;
+   background-position: right 10px center;
+   background-size: 15px;
+}
+
+input[type="text"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder, input[type="number"]::-webkit-input-placeholder, select::-webkit-input-placeholder {
+   color: #ffffffcd;
+
+}
+
+
+fieldset {
+   border-color: transparent;
+   background-color: transparent;
+   padding: 0;
+   margin: 0;
+   border: 0;
+}
+
+legend {
+   color: white;
+   font-size: 16px;
+   font-weight: bold;
+   margin-bottom: 10px;
+   margin-top: 10px;
+   text-align: center;
+}
+
+label {
+   display: block;
+   margin-bottom: 5px;
+   color: white;
+   text-align: left;
+   font-weight: bold;
+}
+
+.info {
+   display: flex;
+   justify-content: space-between;
+}
+
+.edad {
+   margin-right: 20px;
+}
+
+input[type="radio"] {
+   display: none;
+}
+
+.options {
+   display: flex;
+   justify-content: left;
+   gap: 20px;
+   font-weight: bold;
+
+
+}
+
+.submit-button {
+   background-image: linear-gradient(to right, #2177fe, #4f5efe, #8a43f7, #8B53EA, #d54bbd);
+   color: white;
+   border: none;
+   padding: 15px 30px;
+   border-radius: 30px;
+   cursor: pointer;
+   font-size: 20px;
+   text-transform: uppercase;
+   font-weight: bold;
+   outline: none;
+   transition: background-color 0.3s ease;
+   margin: 20px auto;
+   width: auto;
+   display: flex;
+
+}
+
+.submit-button:hover {
+   opacity: 0.9;
+}
+
+span {
+   color: white;
+}
