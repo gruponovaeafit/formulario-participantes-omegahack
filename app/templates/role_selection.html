@@ -31,7 +31,6 @@
         <fieldset>
           <legend>
             *De acuerdo con tus fortalezas y/o destrezas, selecciona tu avatar
-            (Máx. 2):
           </legend>
           <div class="avatar-options">
                 {% for subfield in form.role %}
@@ -65,45 +64,5 @@
 
       <footer>Powered by NOVA EAFIT 💜</footer>
     </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const statusCircles = document.querySelectorAll(".status-circle");
-        statusCircles.forEach((circle) => {
-          circle.addEventListener("click", handleCircleClick);
-        });
-
-        function handleCircleClick() {
-          const checkbox = this.previousElementSibling; 
-          const checkedCheckboxes = document.querySelectorAll(
-            ".role-checkbox:checked"
-          );
-
-          if (checkbox.checked) {
-            checkbox.checked = false;
-            this.style.backgroundColor = "grey";
-            return;
-          }
-
-          if (checkedCheckboxes.length >= 1) {
-            alert("Solo puedes seleccionar un máximo de dos roles.");
-            return;
-          }
-
-          checkbox.checked = true;
-          this.style.backgroundColor = "#78BD56";
-        }
-
-        const form = document.querySelector("form");
-        form.addEventListener("submit", function (event) {
-          const checkedCheckboxes = document.querySelectorAll(
-            ".role-checkbox:checked"
-          );
-          if (checkedCheckboxes.length < 1) {
-            alert("Debes seleccionar al menos un rol.");
-            event.preventDefault();
-          }
-        });
-      });
-    </script>
   </body>
 </html>

@@ -3,7 +3,7 @@ body {
    padding: 0;
    font-family: 'Montserrat', sans-serif;
    font-style: normal;
-   background-image: url('/static/images/degradado.png');
+   background-image: url('/static/images/Degradado.png');
    color: white;
    display: flex;
    flex-direction: column;

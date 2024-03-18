@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Formulario de inscripción para la OmegaHack">
-    <meta name="keywords" content="OmegaHack, NOVA, EAFIT, hackathon">
-    <meta name="author" content="NOVA EAFIT">
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/main_page.css') }}"
+  />
     <link rel="icon" href="{{ url_for('static', filename='images/icono.png') }}">
     <title>OmegaHack</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_page.css') }}">
-</head>
 <body>
     <div class="container">
         <img src="{{ url_for('static', filename='images/omega.png') }}" alt="Logo OmegaHack" class="omega-image">
@@ -19,7 +18,6 @@
             {{ form.hidden_tag() }}
             <button type="submit">Continuar</button>
         </form>
-
         <footer>Powered by NOVA EAFIT 💜</footer>
     </div>
 </body>

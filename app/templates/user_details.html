@@ -9,7 +9,6 @@
 </head>
 <body>
     <div class="container">
-        <!-- Barra de progreso -->
         <div class="progress-bar">
             <div class="step active">1</div>
             <div class="bar active"></div>
@@ -20,7 +19,6 @@
             <div class="step">4</div>
         </div>
 
-        <!-- Formulario Flask -->
         {% block content %}
             <legend>* Por favor, completa los siguientes datos:</legend>
         <form action="" method="post">
@@ -41,9 +39,7 @@
             <div>{{ form.submit(class_='submit-button') }}</div>
         </form>
         {% endblock %}
-        
-        <!-- Pie de página -->
-        <footer>Powered by NOVA EAFIT 💜</footer>
+                <footer>Powered by NOVA EAFIT 💜</footer>
     </div>
 </body>
 </html>

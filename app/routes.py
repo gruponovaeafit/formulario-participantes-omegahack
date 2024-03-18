@@ -95,13 +95,8 @@ def team_selection():
             # Update the session with the selected existing team's ID
             session['team_id'] = form.existing_team.data
 
-        # Proceed to the next step or finalize based on registration type
-        participant_id = session.get('participant_id')
-        if participant_id:
-            return redirect(url_for('final_submit'))
-        else:
-            flash('Session expired. Please start the registration process again.', 'warning')
-            return redirect(url_for('register'))
+        
+        return redirect(url_for('final_submit'))
 
     return render_template('team_selection.html', form=form)
 
@@ -132,7 +127,9 @@ def final_submit():
             id_equipo=team_id  # This can be None if no team was selected
         )
         db.session.add(new_participant)
+        print(new_participant)
         db.session.commit()
+        
 
         # Clear the session data now that we've successfully registered the participant
         session.pop('user_details', None)
