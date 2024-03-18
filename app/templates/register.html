@@ -1,18 +1,73 @@
-
-{% block content %}
-    <h2>Registration Type</h2>
-    <form action="" method="post">
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="Formulario de inscripción para la OmegaHack"
+    />
+    <meta name="keywords" content="OmegaHack, NOVA, EAFIT, hackathon" />
+    <meta name="author" content="NOVA EAFIT" />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/icono.png') }}"
+    />
+    <title>Formulario de Inscripción - OmegaHack</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/register.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>¡Hola!</h1>
+      <p class="special-paragraph">Haz llegado al formulario de</p>
+      <p class="special-paragraph">inscripción para la OmegaHack</p>
+      <br />
+      <form action="" method="post">
         {{ form.hidden_tag() }}
-        <div>
-            {{ form.registration_type.label }}
-            {% for subfield in form.registration_type %}
-                <div>
-                    {{ subfield }} {{ subfield.label }}
-                </div>
-            {% endfor %}
+        <label for="inscription-type"
+          >* Selecciona el tipo de inscripción:</label
+        >
+        <br />
+        <div class="options">
+          {% for subfield in form.registration_type %}
+          <div>
+            {{ subfield() }}
+            <!-- Renderiza el campo del formulario -->
+            <label for="{{ subfield.id }}">
+              <span class="status-circle"></span>
+              <!-- Verifica el texto de la etiqueta y cambia el texto si es necesario -->
+              {% if subfield.label.text == 'Group' %}
+              <img
+                src="{{ url_for('static', filename='images/Roles.png') }}"
+                alt="Equipo"
+              />
+              <p>En equipo</p>
+              <!-- Cambia 'Group' por 'En equipo' -->
+              {% else %}
+              <img
+                src="{{ url_for('static', filename='images/Negocio.png') }}"
+                alt="Individual"
+              />
+              <p>{{ subfield.label.text }}</p>
+              <!-- Mantiene la etiqueta original para otros casos -->
+              {% endif %}
+            </label>
+          </div>
+          {% endfor %}
         </div>
-        <div>
-            {{ form.submit() }}
-        </div>
-    </form>
-{% endblock %}
+        <p class="interesting-fact">
+          ¡Hey! Como dato curioso, en promedio, las personas se tardan alrededor
+          de 2 minutos en completar este formulario.
+        </p>
+        <button type="submit" class="submit-button">Continuar</button>
+      </form>
+      <footer>Powered by NOVA EAFIT 💜</footer>
+    </div>
+  </body>
+</html>
