@@ -52,13 +52,9 @@ label {
 .options {
    display: flex;
    justify-content: center;
-   /* Centra los items horizontalmente */
    align-items: center;
-   /* Centra los items verticalmente */
    flex-wrap: wrap;
-   /* Permite que los items se envuelvan si no hay suficiente espacio */
    gap: 10px;
-   /* Espacio entre los items */
 }
 
 
@@ -96,7 +92,7 @@ label {
 
 .options label img {
    border-radius: 30px !important;
-   width: 250px;
+   width: 200px;
    height: auto;
 }
 
@@ -139,13 +135,16 @@ footer {
    color: #ffffff;
 }
 
-.omega-image {
-   display: block; /* Hace que la imagen no esté en línea con el texto */
-   margin: 20px auto; /* Centra la imagen y le da un poco de margen arriba y abajo */
-   width: 50%; /* Establece el ancho de la imagen como un porcentaje del contenedor */
-   max-width: 450px; /* Establece un ancho máximo para asegurar que no se vuelva demasiado grande */
-   height: auto; /* Mantiene la relación de aspecto de la imagen */
- }
+#header-image {
+   width: 646px;
+   height: auto;
+   display: block;
+   margin: 0 auto;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
 
 
 @media only screen and (max-width: 600px) {
@@ -154,59 +153,43 @@ footer {
       padding: 0 5%;
    }
 
-   .omega-image {
-      width: 95%;
-
-   }
-
-   h1 {
-      font-size: 24px;
-      /* Reduce el tamaño de fuente en dispositivos móviles */
-      line-height: 1.2;
-      /* Ajusta el espaciado entre líneas */
-      margin-top: 15px;
-      margin-bottom: 5px;
+   #header-image {
+      width: 100%;
+      padding: auto;
+      height: 0 auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
    }
 
    .highlight, p {
       font-size: 16px;
-      /* Reduce el tamaño para el texto general y destacado */
       line-height: 1.4;
-      /* Ajusta el espaciado entre líneas */
       margin-top: 10px;
-      /* Reduce el margen superior */
       margin-bottom: 10px;
-      /* Reduce el margen inferior */
       max-width: 100%;
-      /* Asegúrate de que no excedan el ancho de la pantalla */
       overflow-wrap: break-word;
-      /* Asegura que las palabras largas no causen desbordamiento */
    }
 
    .options {
       flex-direction: row;
-      /* Mantén los elementos en fila */
       justify-content: space-around;
-      /* Distribuye el espacio alrededor de los elementos */
    }
 
    .options label {
       padding: 15px;
-      /* Menos padding */
       margin: 20px 0;
-      /* Más espacio entre opciones */
    }
 
    .options label img {
+      padding-top: 30px;
       width: 140px;
-      /* Imágenes más pequeñas */
    }
 
    button {
       width: auto;
-      /* Permite que el botón se ajuste al texto */
       margin: 20px 0;
-      /* Más espacio alrededor del botón */
    }
 
 

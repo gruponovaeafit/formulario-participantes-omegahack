@@ -24,9 +24,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>¡Hola!</h1>
-      <p class="special-paragraph">Haz llegado al formulario de</p>
-      <p class="special-paragraph">inscripción para la OmegaHack</p>
+      <img src="{{ url_for('static', filename='images/header.png') }}" alt="OmegaHack" id="header-image"/>
       <br />
       <form action="" method="post">
         {{ form.hidden_tag() }}
@@ -62,8 +60,8 @@
           {% endfor %}
         </div>
         <p class="interesting-fact">
-          ¡Hey! Como dato curioso, en promedio, las personas se tardan alrededor
-          de 2 minutos en completar este formulario.
+            ¡Hey! 
+            Como dato curioso, la foto de arriba es de nuestro equipo ganador de la versión 2023 :)
         </p>
         <button type="submit" class="submit-button">Continuar</button>
       </form>
