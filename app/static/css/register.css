@@ -92,7 +92,7 @@ label {
 }
 
 .options label img {
-   border-radius: 30px !important;
+   border-radius: 10px !important;
    width: 200px;
    height: auto;
    display: block;
