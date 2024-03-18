@@ -130,9 +130,12 @@ input[type="radio"]:checked+label .status-circle {
    background-color: #78BD56;
 }
 
+
 footer {
+   text-align: center;
    margin-top: 20px;
-   color: #ffffff;
+   color: white;
+   margin-bottom: 20px;
 }
 
 #header-image {
@@ -197,10 +200,6 @@ footer {
       background-image: linear-gradient(to right, #2177fe, #4f5efe, #8a43f7, #8B53EA, #d54bbd);
    }
 
-   footer {
-      margin-top: 20px;
-      color: #ffffff;
-   }
 
    .status-circle {
       display: inline-block;

@@ -1,11 +1,52 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/registration_confirmation.css') }}"
+    />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/icono.png') }}"
+    />
+    <title>Confirmación de Inscripción</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="progress-bar">
+        <div class="step">1</div>
+        <div class="bar"></div>
+        <div class="step">2</div>
+        <div class="bar"></div>
+        <div class="step">3</div>
+        <div class="bar"></div>
+        <div class="step active">4</div>
+      </div>
 
-{% block content %}
-<h2>Registration Complete</h2>
-<p>Thank you for registering, {{ participant.nombre }}!</p>
-<!-- Display any additional information relevant to the participant's registration -->
+      {% block content %}
+      <h2>¡Felicidades!</h2>
+      <p class="confirmation-message">
+        Gracias por registrarte, {{ participant.nombre }}!<br />
+        Has realizado correctamente tu inscripción individual.<br />
+      </p>
 
-<p>
-    <a href="{{ url_for('main_page') }}">Return to the homepage</a>
-</p>
-{% endblock %}
+      <div class="avatar-grid">
+        <img
+          src="{{ url_for('static', filename='images/Roles.png') }}"
+          alt="Roles"
+        />
+      </div>
+
+      <button
+        class="submit-button"
+        onclick="location.href='{{ url_for('main_page') }}'"
+      >
+        Realizar otra inscripción
+      </button>
+      <footer>Powered by NOVA EAFIT 💜</footer>
+      {% endblock %}
+    </div>
+  </body>
+</html>
