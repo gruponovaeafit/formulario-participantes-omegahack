@@ -7,12 +7,8 @@ body {
    color: white;
    display: flex;
    flex-direction: column;
-   min-height: 100vh;
    background-size: cover;
-   background-position: center;
-   background-attachment: fixed;
 }
-
 
 .container {
    width: 90%;
@@ -47,63 +43,6 @@ p {
    text-align: center;
 }
 
-
-label {
-   font-size: 16px;
-   margin-right: 10px;
-}
-
-.options {
-   display: flex;
-   justify-content: center;
-   /* Centra los items horizontalmente */
-   align-items: center;
-   /* Centra los items verticalmente */
-   flex-wrap: wrap;
-   /* Permite que los items se envuelvan si no hay suficiente espacio */
-   gap: 10px;
-   /* Espacio entre los items */
-}
-
-
-.options input {
-   display: none;
-}
-
-.options label {
-   position: relative;
-   border-radius: 20px;
-   display: inline-block;
-   cursor: pointer;
-   padding: 20px;
-   margin: 5px;
-   overflow: hidden;
-   background-color: #000;
-}
-
-.options label::before {
-   content: "";
-   position: absolute;
-   top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0;
-   border-radius: 20px;
-   padding: 5px;
-   background: linear-gradient(145deg, #DE386A, #8B53EA, #5DC6ED);
-   -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-   -webkit-mask-composite: xor;
-   mask-composite: exclude;
-}
-
-.options label img {
-   border-radius: 30px !important;
-   width: 250px;
-   height: auto;
-}
-
 button {
    background-image: linear-gradient(to right, #2177fe, #4f5efe, #8a43f7, #8B53EA, #d54bbd);
    color: white;
@@ -122,26 +61,19 @@ button:hover {
    background-image: linear-gradient(to right, #2177fe, #4f5efe, #8a43f7, #8B53EA, #d54bbd);
 }
 
-.status-circle {
-   display: inline-block;
-   width: 30px;
-   height: 30px;
-   border-radius: 50%;
-   background-color: gray;
-   position: absolute;
-   right: 20px;
-   top: 15px;
-   transition: background-color 0.1s;
-}
-
-input[type="radio"]:checked+label .status-circle {
-   background-color: #78BD56;
-}
-
 footer {
    margin-top: 20px;
    color: #ffffff;
 }
+
+.omega-image {
+   display: block;
+   margin: 20px auto;
+   width: 50%;
+   max-width: 450px;
+   height: auto;
+}
+
 
 @media only screen and (max-width: 600px) {
    .container {
@@ -149,54 +81,31 @@ footer {
       padding: 0 5%;
    }
 
+   .omega-image {
+      width: 95%;
+
+   }
+
    h1 {
       font-size: 24px;
-      /* Reduce el tamaño de fuente en dispositivos móviles */
       line-height: 1.2;
-      /* Ajusta el espaciado entre líneas */
       margin-top: 15px;
       margin-bottom: 5px;
    }
 
    .highlight, p {
       font-size: 16px;
-      /* Reduce el tamaño para el texto general y destacado */
       line-height: 1.4;
-      /* Ajusta el espaciado entre líneas */
       margin-top: 10px;
-      /* Reduce el margen superior */
       margin-bottom: 10px;
-      /* Reduce el margen inferior */
       max-width: 100%;
-      /* Asegúrate de que no excedan el ancho de la pantalla */
       overflow-wrap: break-word;
-      /* Asegura que las palabras largas no causen desbordamiento */
    }
 
-   .options {
-      flex-direction: row;
-      /* Mantén los elementos en fila */
-      justify-content: space-around;
-      /* Distribuye el espacio alrededor de los elementos */
-   }
-
-   .options label {
-      padding: 15px;
-      /* Menos padding */
-      margin: 20px 0;
-      /* Más espacio entre opciones */
-   }
-
-   .options label img {
-      width: 140px;
-      /* Imágenes más pequeñas */
-   }
 
    button {
       width: auto;
-      /* Permite que el botón se ajuste al texto */
       margin: 20px 0;
-      /* Más espacio alrededor del botón */
    }
 
 
@@ -208,29 +117,4 @@ footer {
       margin-top: 20px;
       color: #ffffff;
    }
-
-   .status-circle {
-      display: inline-block;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background-color: gray;
-      position: absolute;
-      top: 20px;
-      right: 15px;
-      transition: background-color 0.1s;
-   }
 }
-
-input[type="radio"]:checked+label .status-circle {
-   background-color: #78BD56;
-}
-
-.omega-image {
-   display: block; /* Hace que la imagen no esté en línea con el texto */
-   margin: 20px auto; /* Centra la imagen y le da un poco de margen arriba y abajo */
-   width: 50%; /* Establece el ancho de la imagen como un porcentaje del contenedor */
-   max-width: 450px; /* Establece un ancho máximo para asegurar que no se vuelva demasiado grande */
-   height: auto; /* Mantiene la relación de aspecto de la imagen */
- }
- 
