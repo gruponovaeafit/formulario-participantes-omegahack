@@ -1,17 +1,109 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/role_selection.css') }}"
+    />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/icono.png') }}"
+    />
+    <title>Formulario OmegaHack</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="progress-bar">
+        <div class="step">1</div>
+        <div class="bar"></div>
+        <div class="step active">2</div>
+        <div class="bar active"></div>
+        <div class="step">3</div>
+        <div class="bar third-to-fourth"></div>
+        <div class="step">4</div>
+      </div>
 
-{% block content %}
-    <h2>Select Your Role</h2>
-    <form action="" method="post">
+      <h2>Selecciona tu rol</h2>
+      <form action="" method="post">
         {{ form.hidden_tag() }}
-        <div>
-            {{ form.role.label }}
-            {% for subfield in form.role %}
-                <div>
-                    {{ subfield }} {{ subfield.label }}
+        <fieldset>
+          <legend>
+            *De acuerdo con tus fortalezas y/o destrezas, selecciona tu avatar
+            (Máx. 2):
+          </legend>
+          <div class="avatar-options">
+                {% for subfield in form.role %}
+                <div class="avatar-option">
+                  {{ subfield(class_='role-checkbox') }}
+                  <label for="{{ subfield.id }}" class="avatar-label">
+                    <div class="title">{{ subfield.label.text }}</div>
+                    <img src="{{ url_for('static', filename='images/' + subfield.id + '.png') }}" alt="{{ subfield.label.text }}" />
+                    <!-- Aquí se agrega la descripción individual para cada rol -->
+                    <span>
+                      {% if subfield.label.text == 'Diseño' %}
+                      Si sueñas con crear experiencias únicas, interactivas y memorables para los usuarios, ¡este rol es perfecto para ti!
+                      {% elif subfield.label.text == 'Mercadeo' %}
+                      Si tu superpoder es resolver problemas de forma creativa y comprender a tu audiencia, ¡este rol es para ti!
+                      {% elif subfield.label.text == 'Negocios' %}
+                      Si tienes la destreza de comunicar el valor de tus ideas con un pitch convincente, ¡este rol es para ti!
+                      {% elif subfield.label.text == 'Programación' %}
+                      Si te emociona el desafío de crear soluciones innovadoras a través del código y la programación, ¡este rol está hecho para ti!
+                      {% endif %}
+                    </span>
+                    <div class="status-circle"></div>
+                  </label>
                 </div>
-            {% endfor %}
-        </div>
-        <div>{{ form.submit() }}</div>
-    </form>
-{% endblock %}
+                {% endfor %}
+              </div>
+              
+          </div>
+          <button type="submit" class="submit-button">Continuar</button>
+        </fieldset>
+      </form>
+
+      <footer>Powered by NOVA EAFIT 💜</footer>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const statusCircles = document.querySelectorAll(".status-circle");
+        statusCircles.forEach((circle) => {
+          circle.addEventListener("click", handleCircleClick);
+        });
+
+        function handleCircleClick() {
+          const checkbox = this.previousElementSibling; 
+          const checkedCheckboxes = document.querySelectorAll(
+            ".role-checkbox:checked"
+          );
+
+          if (checkbox.checked) {
+            checkbox.checked = false;
+            this.style.backgroundColor = "grey";
+            return;
+          }
+
+          if (checkedCheckboxes.length >= 1) {
+            alert("Solo puedes seleccionar un máximo de dos roles.");
+            return;
+          }
+
+          checkbox.checked = true;
+          this.style.backgroundColor = "#78BD56";
+        }
+
+        const form = document.querySelector("form");
+        form.addEventListener("submit", function (event) {
+          const checkedCheckboxes = document.querySelectorAll(
+            ".role-checkbox:checked"
+          );
+          if (checkedCheckboxes.length < 1) {
+            alert("Debes seleccionar al menos un rol.");
+            event.preventDefault();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
