@@ -146,4 +146,3 @@ def final_submit():
         # If required details are missing, redirect to the start or an error handling page
         flash('Registration details missing. Please start the registration process again.', 'warning')
         return redirect(url_for('register'))
-

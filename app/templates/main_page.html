@@ -1,9 +1,31 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Formulario de inscripción para la OmegaHack">
+    <meta name="keywords" content="OmegaHack, NOVA, EAFIT, hackathon">
+    <meta name="author" content="NOVA EAFIT">
+    <link rel="icon" href="{{ url_for('static', filename='images/icono.png') }}">
+    <title>OmegaHack</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_page.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>OMEGAHACK</h1>
+        <p class="special-paragraph">Haz llegado al formulario de</p>
+        <p class="special-paragraph">inscripción para la OmegaHack</p>
+        <img src="{{ url_for('static', filename='images/omega.png') }}" alt="Logo OmegaHack" class="omega-image">
+        <br>
 
-{% block content %}
-    <h1>OmegaHack 2024</h1>
-    <form action="" method="post">
-        {{ form.hidden_tag() }}
-        <p>{{ form.submit() }}</p>
-    </form>
-{% endblock %}
+        <!-- Aquí empieza el formulario de Flask -->
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <button type="submit">Continuar</button>
+        </form>
+        <!-- Aquí termina el formulario de Flask -->
+
+        <footer>Powered by NOVA EAFIT 💜</footer>
+    </div>
+</body>
+</html>
