@@ -5,7 +5,7 @@ from app.models import Universidad, Role, Equipo
 
 
 class MainPageForm(FlaskForm):
-    submit = SubmitField('Start')
+    submit = SubmitField('Iniciar')
 
 
 class RegistrationTypeForm(FlaskForm):
@@ -36,15 +36,15 @@ class UserDetailsForm(FlaskForm):
 
 class RoleSelectionForm(FlaskForm):
     role = RadioField('Seleccione su rol', choices=[], validators=[DataRequired()])
-    submit = SubmitField('Continue')
+    submit = SubmitField('Continuar')
 
 
 class JoinTeamForm(FlaskForm):
-    existing_team = SelectField('Join an Existing Team', coerce=int, validators=[Optional()])
-    new_team_name = StringField('Or Create a New Team', validators=[Optional()])
-    submit = SubmitField('Submit')
+    existing_team = SelectField('Selecciona tu equipo', coerce=int, validators=[Optional()])
+    new_team_name = StringField('Vamos a crear tu equipo', validators=[Optional()])
+    submit = SubmitField('Enviar')
 
     def __init__(self, *args, **kwargs):
         super(JoinTeamForm, self).__init__(*args, **kwargs)
         # Dynamically set choices for existing teams
-        self.existing_team.choices = [(0, 'Select a Team')] + [(team.id, team.nombre) for team in Equipo.query.order_by('nombre').all()]
+        self.existing_team.choices = [(0, 'Seleccionar un equipo')] + [(team.id, team.nombre) for team in Equipo.query.order_by('nombre').all()]
