@@ -24,8 +24,24 @@
         <form action="" method="post">
             {{ form.hidden_tag() }}
             <div>{{ form.nombre.label }} {{ form.nombre(class_='gradient-border') }}</div>
-            <div>{{ form.correo_institucional.label }} {{ form.correo_institucional(class_='gradient-border') }}</div>
-            <div>{{ form.edad.label }} {{ form.edad(class_='gradient-border') }}</div>
+            <div>{{ form.correo_institucional.label }} {{ form.correo_institucional(class_='gradient-border') }}
+                {% if form.correo_institucional.errors %}
+                    <ul class="errors">
+                        {% for error in form.correo_institucional.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>            
+            <div>{{ form.edad.label }} {{ form.edad(class_='gradient-border') }}
+                {% if form.edad.errors %}
+                    <ul class="errors">
+                        {% for error in form.edad.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>            
             <div>{{ form.universidad.label }} {{ form.universidad(class_='gradient-border') }}</div>
             <div>{{ form.carrera.label }} {{ form.carrera(class_='gradient-border') }}</div>
             <div>{{ form.sexo.label }} {{ form.sexo(class_='gradient-border') }}</div>

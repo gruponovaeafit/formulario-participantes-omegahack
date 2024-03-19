@@ -47,8 +47,9 @@ def user_details():
         }
         print(session['user_details'])
         return redirect(url_for('role_selection'))
-
-    return render_template('user_details.html', form=form, show_progress=True, progress_percentage=55)
+    else:
+        # Re-render the form with validation errors
+        return render_template('user_details.html', form=form, show_progress=True, progress_percentage=55)
 
 
 @app.route('/role_selection', methods=['GET', 'POST'])

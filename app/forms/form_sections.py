@@ -1,7 +1,9 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, RadioField, SelectField, BooleanField, IntegerField
+from wtforms import StringField, SubmitField, RadioField, SelectField, BooleanField, IntegerField, ValidationError
 from wtforms.validators import DataRequired, Email, Optional
 from app.models import Universidad, Role, Equipo
+from wtforms.validators import NumberRange
+from app.models import Participante
 
 
 class MainPageForm(FlaskForm):
@@ -14,12 +16,12 @@ class RegistrationTypeForm(FlaskForm):
 
 
 class UserDetailsForm(FlaskForm):
-    nombre = StringField('Nombre', validators=[DataRequired()])
+    nombre = StringField('Nombre Completo', validators=[DataRequired()])
     correo_institucional = StringField('Correo Institucional', validators=[DataRequired(), Email()])
-    edad = IntegerField('Edad', validators=[DataRequired()])
+    edad = IntegerField('Edad', validators=[DataRequired(), NumberRange(min=10, max=80, message="La edad debe estar entre 10 y 80 años.")])
     universidad = SelectField('Universidad', coerce=int)  # Note the coerce=int for handling IDs
     carrera = StringField('Carrera', validators=[DataRequired()])
-    sexo = SelectField('Sexo', choices=[
+    sexo = SelectField('Genero', choices=[
         ('', 'Seleccione uno'),
         ('masculino', 'Masculino'),
         ('femenino', 'Femenino'),
@@ -28,6 +30,14 @@ class UserDetailsForm(FlaskForm):
     ], validators=[DataRequired()])
     participado_hackathon = BooleanField('He participado en otra hackathon')
     submit = SubmitField('Continuar')
+
+    def validate_edad(self, field):  # Rename "form" to "self" or add the missing "self" parameter
+        if field.data < 10 or field.data > 80:
+            raise ValidationError("La edad debe estar entre 10 y 80 años.")
+
+    def validate_correo_institucional(self, field):
+        if Participante.query.filter_by(correo_institucional=field.data).first():
+            raise ValidationError('Este correo ya está registrado. Por favor, usa otro.')
 
     def __init__(self, *args, **kwargs):
         super(UserDetailsForm, self).__init__(*args, **kwargs)
