@@ -8,15 +8,15 @@
 ## Solución
 
 
-##Desarrollo
+## Desarrollo
 
 
-##Análisis
-###Aciertos
+## Análisis
+### Aciertos
 
-###Desaciertos
+### Desaciertos
 
-###Soluciones
+### Soluciones
 
 
-##Aprendizajes
+## Aprendizajes
