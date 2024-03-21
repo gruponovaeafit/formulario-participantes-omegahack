@@ -28,3 +28,44 @@ En el semestre 2024-1 se desarrollará el evento La OmegaHack, desarrollado por 
 
 
 ## Aprendizajes
+# OmegaHack 2024
+
+## Install and execute
+
+1. Clone the repository
+
+```bash
+git clone
+```
+
+2. Create a virtual environment
+
+```bash
+python3 -m venv venv
+```
+
+3. Activate the virtual environment (Linux and Windows)
+
+- Linux
+
+```bash
+source venv/bin/activate
+```
+
+- Windows
+
+```bash
+venv\Scripts\activate
+```
+
+4. Install the requirements
+
+```bash
+pip install -r requirements.txt
+```
+
+5. Run the application
+
+```bash
+python3 run.py
+```
