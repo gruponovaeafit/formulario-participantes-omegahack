@@ -24,7 +24,11 @@
   </head>
   <body>
     <div class="container">
-      <img src="{{ url_for('static', filename='images/Header.png') }}" alt="OmegaHack" id="header-image"/>
+      <img
+        src="{{ url_for('static', filename='images/Header.png') }}"
+        alt="OmegaHack"
+        id="header-image"
+      />
       <br />
       <form action="" method="post">
         {{ form.hidden_tag() }}
@@ -60,12 +64,21 @@
           {% endfor %}
         </div>
         <p class="interesting-fact">
-            ¡Hey! 
-            Como dato curioso, la foto de arriba es de nuestro equipo ganador de la versión 2023 :)
+          ¡Hey! Como dato curioso, la foto de arriba es de nuestro equipo
+          ganador de la versión 2023 :)
         </p>
         <button type="submit" class="submit-button">Continuar</button>
       </form>
-      <footer>Powered by NOVA EAFIT 💜</footer>
+      <footer>
+        Powered by
+        <a
+          href="https://www.instagram.com/novaeafit/"
+          style="text-decoration: none; color: inherit"
+          target="_blank"
+          >NOVA EAFIT</a
+        >
+        💜
+      </footer>
     </div>
   </body>
 </html>

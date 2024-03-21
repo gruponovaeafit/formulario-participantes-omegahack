@@ -83,7 +83,7 @@ def team_selection():
         return redirect(url_for('main_page'))
     
     form = JoinTeamForm()
-    form.existing_team.choices = [(0, 'Select a Team')] + [(team.id, team.nombre) for team in Equipo.query.order_by(Equipo.nombre).all()]
+    form.existing_team.choices = [(0, 'Por favor seleccione de la lista')] + [(team.id, team.nombre) for team in Equipo.query.order_by(Equipo.nombre).all()]
 
     if form.validate_on_submit():
         if form.new_team_name.data:  # User wants to create a new team

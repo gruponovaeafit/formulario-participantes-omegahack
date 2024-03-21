@@ -197,6 +197,13 @@ footer {
          font-size: 16px;
       }
 
+      .team-select {
+         padding: 10px; /* Reducir el padding */
+         font-size: 14px; /* Reducir el tamaño de la fuente */
+         width: 100%; /* Hacer que el input ocupe todo el ancho disponible */
+         margin-bottom: 10px; /* Ajustar el margen inferior si es necesario */
+     }
+
    .submit-button, .create-new-team-btn {
        padding: 15px;
        font-size: 18px;
