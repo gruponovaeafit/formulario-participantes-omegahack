@@ -40,24 +40,20 @@
           {% for subfield in form.registration_type %}
           <div>
             {{ subfield() }}
-            <!-- Renderiza el campo del formulario -->
             <label for="{{ subfield.id }}">
               <span class="status-circle"></span>
-              <!-- Verifica el texto de la etiqueta y cambia el texto si es necesario -->
               {% if subfield.label.text == 'Group' %}
               <img
                 src="{{ url_for('static', filename='images/roles.png') }}"
                 alt="Equipo"
               />
               <p>En equipo</p>
-              <!-- Cambia 'Group' por 'En equipo' -->
               {% else %}
               <img
                 src="{{ url_for('static', filename='images/role-2.png') }}"
                 alt="Individual"
               />
               <p>{{ subfield.label.text }}</p>
-              <!-- Mantiene la etiqueta original para otros casos -->
               {% endif %}
             </label>
           </div>

@@ -105,6 +105,8 @@ form {
    border: 2px solid transparent;
    -webkit-border-image: linear-gradient(145deg, #DE386A, #8B53EA, #5DC6ED) 1;
    border-image: linear-gradient(145deg, #DE386A, #8B53EA, #5DC6ED) 1;
+   -webkit-appearance: none; /* Para deshabilitar el estilo por defecto en navegadores WebKit */
+    appearance: none;
 }
 
 
@@ -124,6 +126,8 @@ select.gradient-border {
    margin: 10px 0;
    font-size: 14px;
    outline: none;
+   -webkit-appearance: none; /* Para deshabilitar el estilo por defecto en navegadores WebKit */
+    appearance: none;
 }
 
 .checkbox-custom {
@@ -255,4 +259,17 @@ input[type="radio"] {
 
 span {
    color: white;
+}
+
+
+@media (prefers-color-scheme: light) {
+   .team-select, .new-team-input {
+      background-color: white;
+      color: black;
+   }
+
+   .team-select option, .new-team-input option {
+      background-color: white;
+      color: black;
+   }
 }

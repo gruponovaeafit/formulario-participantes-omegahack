@@ -21,7 +21,7 @@ class UserDetailsForm(FlaskForm):
     edad = IntegerField('Edad', validators=[DataRequired(), NumberRange(min=10, max=80, message="La edad debe estar entre 10 y 80 años.")])
     universidad = SelectField('Universidad', coerce=int)  # Note the coerce=int for handling IDs
     carrera = StringField('Carrera', validators=[DataRequired()])
-    sexo = SelectField('Genero', choices=[
+    sexo = SelectField('Género', choices=[
         ('', 'Seleccione uno'),
         ('masculino', 'Masculino'),
         ('femenino', 'Femenino'),

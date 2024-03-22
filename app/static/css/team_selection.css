@@ -65,7 +65,7 @@ body {
 
 .bar.active {
    background: linear-gradient(to right, #8B53EA, #8B53EA 50%, white 50%, white 100%);
-}  
+}
 
 h1 {
    text-align: center;
@@ -110,8 +110,8 @@ h1 {
    text-align: center;
    margin-bottom: 20px;
    color:
-   linear-gradient(#000000 0 0) padding-box,
-   linear-gradient(145deg, #DE386A, #8B53EA, #5DC6ED) border-box;
+      linear-gradient(#000000 0 0) padding-box,
+      linear-gradient(145deg, #DE386A, #8B53EA, #5DC6ED) border-box;
    font-size: 30px;
    font-weight: bold;
 }
@@ -119,6 +119,16 @@ h1 {
 .selection-area, .creation-area {
    margin-bottom: 20px;
 }
+
+select.team-select::-webkit-dropdown-arrow {
+   color: white;
+}
+
+select.team-select option {
+   background-color: black;
+   color: white;
+}
+
 
 .team-select, .new-team-input {
    border-radius: 15px;
@@ -135,6 +145,9 @@ h1 {
    margin: 10px 0;
    font-size: 14px;
    outline: none;
+   -webkit-appearance: none;
+   /* Para deshabilitar el estilo por defecto en navegadores WebKit */
+   appearance: none;
 }
 
 
@@ -156,7 +169,7 @@ h1 {
 
 }
 
-.submit-button:hover, .create-new-team-btn:hover{
+.submit-button:hover, .create-new-team-btn:hover {
    opacity: 0.9;
 }
 
@@ -167,46 +180,69 @@ footer {
 }
 
 @media (max-width: 600px) {
-    .container {
-         width: 90%;
-         margin: 10px auto;
-      }
-   
-      .progress-bar {
-         margin: 10px 0;
-      }
-   
-      .avatar-options {
-         grid-template-columns: 1fr;
-      }
-   
-      .avatar-option {
-         padding: 10px;
-      }
-   
-      .avatar-label .title {
-         font-size: 12px;
-      }
-   
-      .avatar-label img {
-         width: 60px;
-      }
-   
-      .submit-button {
-         padding: 10px 20px;
-         font-size: 16px;
-      }
+   .container {
+      width: 90%;
+      margin: 10px auto;
+   }
 
-      .team-select {
-         padding: 10px; /* Reducir el padding */
-         font-size: 14px; /* Reducir el tamaño de la fuente */
-         width: 100%; /* Hacer que el input ocupe todo el ancho disponible */
-         margin-bottom: 10px; /* Ajustar el margen inferior si es necesario */
-     }
+   .progress-bar {
+      margin: 10px 0;
+   }
+
+   .avatar-options {
+      grid-template-columns: 1fr;
+   }
+
+   .avatar-option {
+      padding: 10px;
+   }
+
+   .avatar-label .title {
+      font-size: 12px;
+   }
+
+   .avatar-label img {
+      width: 60px;
+   }
+
+   .submit-button {
+      padding: 10px 20px;
+      font-size: 16px;
+   }
+
+   .team-select {
+      padding: 10px;
+      font-size: 14px;
+      width: 100%;
+      margin-bottom: 10px;
+   }
 
    .submit-button, .create-new-team-btn {
-       padding: 15px;
-       font-size: 18px;
+      padding: 15px;
+      font-size: 18px;
    }
 }
 
+@media (prefers-color-scheme: dark) {
+   .team-select, .new-team-input {
+      background-color: black;
+      color: white;
+   }
+
+   .team-select option, .new-team-input option {
+      background-color: black;
+      color: white;
+   }
+}
+
+@media (prefers-color-scheme: light) {
+   .team-select, .new-team-input {
+      background-color: white;
+      color: black;
+   }
+
+   .team-select option, .new-team-input option {
+      background-color: white;
+      color: black;
+   }
+}
