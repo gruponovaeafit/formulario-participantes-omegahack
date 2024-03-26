@@ -85,6 +85,11 @@ form {
    border-radius: 5px;
 }
 
+select.gradient-border option {
+   background-color: #000000;
+   color: white;
+}
+
 .gradient-border-wrapper select::-ms-expand {
    display: none;
 }
