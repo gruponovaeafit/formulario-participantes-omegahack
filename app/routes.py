@@ -110,4 +110,4 @@ def finalize_registration():
 
 @app.route('/success_page')
 def success_page():
-    return render_template('success.html'
+    return render_template('success.html')
