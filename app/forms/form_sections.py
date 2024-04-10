@@ -10,7 +10,7 @@ class MainPageForm(FlaskForm):
     tratamiento_datos = BooleanField('He leido y acepto los términos y condiciones', validators=[
         DataRequired(message="Debe aceptar la política de tratamiento de datos para proceder.")
     ])
-    submit = SubmitField('Iniciar')
+    submit = SubmitField('Continuar')
 
 
 class TeamSelectionForm(FlaskForm):

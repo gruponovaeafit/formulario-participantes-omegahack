@@ -21,7 +21,8 @@ body {
 p {
    max-width: 600px;
    margin: 20px auto;
-   margin-bottom: 20px;
+   margin-bottom: 50px;
+   margin-top: 30;
    line-height: 1.6;
    text-align: justify;
    font-size: 18px;
@@ -29,11 +30,21 @@ p {
    text-align: center;
 }
 
+.omega-image {
+   display: block;
+   margin: 20px auto;
+   width: 50%;
+   max-width: 580px;
+   height: auto;
+}
+
 
 button {
    background-image: linear-gradient(to right, #2177fe, #4f5efe, #8a43f7, #8B53EA, #d54bbd);
    color: white;
    border: none;
+   margin-top: 30px;
+   margin-bottom: 30px;
    padding: 20px 30px;
    border-radius: 30px;
    cursor: pointer;
@@ -49,17 +60,13 @@ button:hover {
 }
 
 footer {
+   text-align: center;
    margin-top: 20px;
-   color: #ffffff;
-}
+   color: white;
+   margin-bottom: 20px;
+}   
 
-.omega-image {
-   display: block;
-   margin: 20px auto;
-   width: 50%;
-   max-width: 580px;
-   height: auto;
-}
+
 
 
 @media only screen and (max-width: 600px) {
@@ -83,8 +90,8 @@ footer {
    .highlight, p {
       font-size: 16px;
       line-height: 1.4;
-      margin-top: 10px;
-      margin-bottom: 10px;
+      margin-top: 30px;
+      margin-bottom: 30px;
       max-width: 100%;
       overflow-wrap: break-word;
    }

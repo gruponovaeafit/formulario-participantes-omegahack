@@ -12,22 +12,19 @@
 <body>
     <div class="container">
         <img src="{{ url_for('static', filename='images/omega.png') }}" alt="Logo OmegaHack" class="omega-image">
-        <br>
-
         <form method="post">
             {{ form.hidden_tag() }}
+            <p class="intro-text">Estamos muy emocionados con su participación en la OmegaHack. Para continuar revisa y acepta los términos y condiciones.</p>
             <div>
                 {{ form.tratamiento_datos() }} {{ form.tratamiento_datos.label }}
                 {% if form.tratamiento_datos.errors %}
                     <div class="error">{{ form.tratamiento_datos.errors[0] }}</div>
                 {% endif %}
             </div>
-            {{ form.submit() }}
+            <button type="submit" class="button">{{ form.submit.label }}</button>
         </form>
-
         <footer>
-            Powered by 
-            <a href="https://www.instagram.com/novaeafit/" style="text-decoration: none; color: inherit;" target="_blank">NOVA EAFIT</a> 💜
+            Powered by <a href="https://www.instagram.com/novaeafit/" style="text-decoration: none; color: inherit;" target="_blank">NOVA EAFIT</a> 💜
         </footer>        
     </div>
 </body>
