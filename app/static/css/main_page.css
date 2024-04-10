@@ -9,7 +9,7 @@ body {
    flex-direction: column;
    background-size: cover;
    background-repeat: no-repeat;
-   background-attachment: fixed;   
+   background-attachment: fixed;
 }
 
 .container {
@@ -59,60 +59,87 @@ button:hover {
    background-image: linear-gradient(to right, #2177fe, #4f5efe, #8a43f7, #8B53EA, #d54bbd);
 }
 
+.bold-text {
+   font-weight: bold;
+   font-size: 15px;
+}
+
+.bold-text a {
+   color: #5DC6ED !important;
+   text-decoration-color: #5DC6ED !important;
+}
+
+.custom-checkbox input[type="checkbox"] {
+   display: none;
+}
+
+.custom-checkbox label:before {
+   content: '';
+   display: inline-block;
+   margin-right: 10px;
+   vertical-align: text-top;
+   width: 20px;
+   height: 20px;
+   background-color: white;
+   border: 1px solid #ddd;
+   border-radius: 50%;
+}
+
+.custom-checkbox input[type="checkbox"]:checked+label:before {
+   background-color: #78BD56;
+   border-color: #78BD56;
+}
+
 footer {
    text-align: center;
    margin-top: 20px;
    color: white;
    margin-bottom: 20px;
-}   
-
-
-
+}
 
 @media only screen and (max-width: 600px) {
    .container {
-      width: 90%;
-      padding: 0 5%;
+       width: 90%;
+       padding: 0 5%;
    }
 
    .omega-image {
-      width: 100%;
-
+       width: 100%;
    }
 
-   h1 {
-      font-size: 24px;
-      line-height: 1.2;
-      margin-top: 15px;
-      margin-bottom: 5px;
+   .highlight,
+   p {
+       font-size: 20px;
+       line-height: 1.4;
+       margin-top: 50px;
+       margin-bottom: 50px;
+       max-width: 100%;
+       overflow-wrap: break-word;
    }
-
-   .highlight, p {
-      font-size: 16px;
-      line-height: 1.4;
-      margin-top: 30px;
-      margin-bottom: 30px;
-      max-width: 100%;
-      overflow-wrap: break-word;
-   }
-
 
    button {
-      width: auto;
-      margin: 20px 0;
+       width: auto;
+       margin: 20px 0;
+       margin-top: 50px;
+       margin-bottom: 50px;
    }
-
 
    button:hover {
-      background-image: linear-gradient(to right, #2177fe, #4f5efe, #8a43f7, #8B53EA, #d54bbd);
+       background-image: linear-gradient(to right, #2177fe, #4f5efe, #8a43f7, #8B53EA, #d54bbd);
    }
 
-
+   .custom-checkbox label:before {
+       width: 15px;
+       height: 15px;
+       border: 1px solid #ddd;
+       
+   }
 
    footer {
-      text-align: center;
-      margin-top: 20px;
-      color: white;
-      margin-bottom: 20px;
-   }   
+       text-align: center;
+       margin-top: 20px;
+       color: white;
+       margin-top: 30px;
+       margin-bottom: 30px;
+   }
 }
