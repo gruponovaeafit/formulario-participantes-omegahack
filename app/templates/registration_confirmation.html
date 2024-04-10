@@ -1,60 +1,25 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/registration_confirmation.css') }}"
-    />
-    <link
-      rel="icon"
-      href="{{ url_for('static', filename='images/icono.png') }}"
-    />
-    <title>Confirmación de Inscripción</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="progress-bar">
-        <div class="step">1</div>
-        <div class="bar"></div>
-        <div class="step">2</div>
-        <div class="bar"></div>
-        <div class="step">3</div>
-        <div class="bar"></div>
-        <div class="step active">4</div>
-      </div>
-
-      {% block content %}
-      <h2>¡Felicidades!</h2>
-      <p class="confirmation-message">
-        Gracias por registrarte, {{ participant.nombre }}!<br />
-        Has realizado correctamente tu inscripción.<br />
-      </p>
-      <div class="avatar-grid">
-        <img
-          src="{{ url_for('static', filename='images/roles.png') }}"
-          alt="Roles"
-        />
-      </div>
-
-      <button
-        class="submit-button"
-        onclick="location.href='{{ url_for('main_page') }}'"
-      >
-        Realizar otra inscripción
-      </button>
-      <footer>
-        Powered by
-        <a
-          href="https://www.instagram.com/novaeafit/"
-          style="text-decoration: none; color: inherit"
-          target="_blank"
-          >NOVA EAFIT</a
-        >
-        💜
-      </footer>
-      {% endblock %}
-    </div>
-  </body>
+<html>
+<head>
+    <title>Confirm Registration</title>
+</head>
+<body>
+    <h2>Confirm Your Registration Details</h2>
+    
+    <p><strong>Team:</strong> {{ data.equipo_nombre }}</p>
+    <p><strong>Name:</strong> {{ data.participante_nombre }}</p>
+    <p><strong>Semester:</strong> {{ data.semestre }}</p>
+    <p><strong>EPS:</strong> {{ data.eps }}</p>
+    <p><strong>Emergency Contact:</strong> {{ data.contacto_emergencia }}</p>
+    <p><strong>Relationship with Emergency Contact:</strong> {{ data.parentesco_contacto_emergencia }}</p>
+    <p><strong>Allergies:</strong> {{ data.alergias }}</p>
+    <p><strong>Diseases:</strong> {{ data.enfermedades }}</p>
+    <p><strong>Emergency Contact Number:</strong> {{ data.numero_contacto_emergencia }}</p>
+    <p><strong>Agreed to Data Treatment:</strong> {{ data.seguridad_asistencia }}</p>
+    
+    <form action="{{ url_for('finalize_registration') }}" method="post">
+        <input type="submit" value="Confirm and Register">
+    </form>
+    <a href="{{ url_for('select_team') }}">Go Back</a>
+</body>
 </html>

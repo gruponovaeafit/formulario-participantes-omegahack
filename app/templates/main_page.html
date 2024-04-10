@@ -14,10 +14,17 @@
         <img src="{{ url_for('static', filename='images/omega.png') }}" alt="Logo OmegaHack" class="omega-image">
         <br>
 
-        <form action="" method="post">
+        <form method="post">
             {{ form.hidden_tag() }}
-            <button type="submit">Continuar</button>
+            <div>
+                {{ form.tratamiento_datos() }} {{ form.tratamiento_datos.label }}
+                {% if form.tratamiento_datos.errors %}
+                    <div class="error">{{ form.tratamiento_datos.errors[0] }}</div>
+                {% endif %}
+            </div>
+            {{ form.submit() }}
         </form>
+
         <footer>
             Powered by 
             <a href="https://www.instagram.com/novaeafit/" style="text-decoration: none; color: inherit;" target="_blank">NOVA EAFIT</a> 💜
