@@ -81,6 +81,7 @@ def registration_confirmation():
 @app.route('/finalize_registration', methods=['POST'])
 def finalize_registration():
     personal_info = session.get('personal_information')
+    seguridad_asistencia_boolean = True if personal_info.get('seguridad_asistencia') == 'yes' else False
 
     if personal_info:
         participante = Participante(
@@ -94,7 +95,7 @@ def finalize_registration():
             enfermedades=personal_info.get('enfermedades'),
             numero_contacto_emergencia=personal_info.get('numero_contacto_emergencia'),
             tratamiento_datos=session.get('data_treatment_agreement', False),
-            seguridad_asistencia=personal_info.get('seguridad_asistencia', False)
+            seguridad_asistencia=seguridad_asistencia_boolean,
         )
         db.session.add(participante)
         db.session.commit()

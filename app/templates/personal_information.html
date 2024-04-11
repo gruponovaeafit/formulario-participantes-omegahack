@@ -1,55 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="es">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Información Personal</title>
-    <link
-      rel="icon"
-      href="{{ url_for('static', filename='images/icono.png') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/user_details.css') }}"
-    />
-  </head>
-  <body>
-    <div class="container mt-5">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user_details.css') }}" />
+    <link rel="icon" href="{{ url_for('static', filename='images/icono.png') }}" />
+    <title>Formulario OmegaHack</title>
+</head>
+<body>
+    <div class="container">
       <h2>Información Personal</h2>
-      <form method="POST">
-        {{ form.hidden_tag() }}
-        <div class="form-group">
-          {{ form.nombre.label(class="form-label") }} {{
-          form.nombre(class="form-control") }} {% if form.nombre.errors %}
-          <div class="alert alert-danger">{{ form.nombre.errors[0] }}</div>
-          {% endif %}
-        </div>
+        <form method="post">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.nombre.label(class_='form-label') }} {{ form.nombre(class_='form-control') }}
+                {% if form.nombre.errors %}
+                    <div class="alert alert-danger">{{ form.nombre.errors[0] }}</div>
+                {% endif %}
+            </div>
 
-        {% for field in form if field.name != 'nombre' and field.type !=
-        'CSRFToken' %}
-        <div class="form-group">
-          {{ field.label(class="form-label") }} {{ field(class="form-control")
-          }} {% if field.errors %}
-          <div class="alert alert-danger">{{ field.errors[0] }}</div>
-          {% endif %}
-        </div>
-        {% endfor %}
+            <div class="form-group">
+                {{ form.semestre.label(class_='form-label') }} {{ form.semestre(class_='form-control') }}
+                {% if form.semestre.errors %}
+                    <div class="alert alert-danger">{{ form.semestre.errors[0] }}</div>
+                {% endif %}
+            </div>
 
-        <!-- Submit button -->
-        <div class="form-group">
-          <button type="submit" class="submit-button">Enviar</button>
-        </div>
-      </form>
+            <div class="form-group">
+                {{ form.eps.label(class_='form-label') }} {{ form.eps(class_='form-control') }}
+                {% if form.eps.errors %}
+                    <div class="alert alert-danger">{{ form.eps.errors[0] }}</div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.contacto_emergencia.label(class_='form-label') }} {{ form.contacto_emergencia(class_='form-control') }}
+                {% if form.contacto_emergencia.errors %}
+                    <div class="alert alert-danger">{{ form.contacto_emergencia.errors[0] }}</div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.alergias.label(class_='form-label') }} {{ form.alergias(class_='form-control') }}
+                {% if form.alergias.errors %}
+                    <div class="alert alert-danger">{{ form.alergias.errors[0] }}</div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.enfermedades.label(class_='form-label') }} {{ form.enfermedades(class_='form-control') }}
+                {% if form.enfermedades.errors %}
+                    <div class="alert alert-danger">{{ form.enfermedades.errors[0] }}</div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.numero_contacto_emergencia.label(class_='form-label') }} {{ form.numero_contacto_emergencia(class_='form-control') }}
+                {% if form.numero_contacto_emergencia.errors %}
+                    <div class="alert alert-danger">{{ form.numero_contacto_emergencia.errors[0] }}</div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.parentesco_contacto_emergencia.label(class_='form-label') }} {{ form.parentesco_contacto_emergencia(class_='form-control') }}
+                {% if form.parentesco_contacto_emergencia.errors %}
+                    <div class="alert alert-danger">{{ form.parentesco_contacto_emergencia.errors[0] }}</div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                <span class="form-label">{{ form.seguridad_asistencia.label }}</span>
+                <div class="radio-options">
+                    {% for option in form.seguridad_asistencia %}
+                    <div class="custom-radio">
+                        {{ option(class="radio-input") }} {{ option.label(class="radio-label") }}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="form-group">
+                {{ form.submit(class_='submit-button') }}
+            </div>
+        </form>
     </div>
-    <footer>
-      Powered by
-      <a
-        href="https://www.instagram.com/novaeafit/"
-        style="text-decoration: none; color: inherit"
-        target="_blank"
-        >NOVA EAFIT</a
-      >
-      💜
-    </footer>
-  </body>
+</body>
 </html>

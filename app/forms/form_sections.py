@@ -40,3 +40,5 @@ class PersonalInformationForm(FlaskForm):
     def validate_semestre(self, field):
         if field.data < 1 or field.data > 10:
             raise ValidationError("El semestre debe estar entre 1 y 10.")
+    
+    submit = SubmitField('Continuar')
