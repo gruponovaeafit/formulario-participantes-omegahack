@@ -34,7 +34,9 @@ class PersonalInformationForm(FlaskForm):
     enfermedades = StringField('Enfermedades', validators=[DataRequired()])
     numero_contacto_emergencia = StringField('Número de contacto de emergencia', validators=[DataRequired()])
     parentesco_contacto_emergencia = StringField('Parentesco', validators=[DataRequired()]) 
-    seguridad_asistencia = BooleanField('He leído y acepto los términos y condiciones', validators=[DataRequired(message="Debe aceptar la política de tratamiento de datos para proceder.")])
+    seguridad_asistencia = RadioField('¿Estás segur@ de asistir al evento?', 
+                                      choices=[('yes', 'Sí'), ('no', 'No')],
+                                      validators=[DataRequired(message="Debe seleccionar una opción.")])
     def validate_semestre(self, field):
         if field.data < 1 or field.data > 10:
             raise ValidationError("El semestre debe estar entre 1 y 10.")
