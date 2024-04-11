@@ -1,26 +1,38 @@
 <!DOCTYPE html>
-<link rel="icon" href="{{ url_for('static', filename='images/icono.png') }}">
-<html>
-<head>
-    <title>Confirmación de registro</title>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirmación de Registro</title>
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/icono.png') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/registration_confirmation.css') }}"
+    />
 </head>
 <body>
-    <h2>Confirm Your Registration Details</h2>
+    <h2>Confirma los detalles de tu registro</h2>
     
-    <p><strong>Team:</strong> {{ data.equipo_nombre }}</p>
-    <p><strong>Name:</strong> {{ data.participante_nombre }}</p>
-    <p><strong>Semester:</strong> {{ data.semestre }}</p>
+    <p><strong>Equipo:</strong> {{ data.equipo_nombre }}</p>
+    <p><strong>Nombre:</strong> {{ data.participante_nombre }}</p>
+    <p><strong>Semestre:</strong> {{ data.semestre }}</p>
     <p><strong>EPS:</strong> {{ data.eps }}</p>
-    <p><strong>Emergency Contact:</strong> {{ data.contacto_emergencia }}</p>
-    <p><strong>Relationship with Emergency Contact:</strong> {{ data.parentesco_contacto_emergencia }}</p>
-    <p><strong>Allergies:</strong> {{ data.alergias }}</p>
-    <p><strong>Diseases:</strong> {{ data.enfermedades }}</p>
-    <p><strong>Emergency Contact Number:</strong> {{ data.numero_contacto_emergencia }}</p>
-    <p><strong>Agreed to Data Treatment:</strong> {{ data.seguridad_asistencia }}</p>
+    <p><strong>Número de celular:</strong> {{ data.contacto_emergencia }}</p>
+    <p><strong>Numero contacto de emergencia</strong> {{ data.numero_contacto_emergencia }}</p>
+    <p><strong>Parentesco:</strong> {{ data.parentesco_contacto_emergencia }}</p>
+    <p><strong>Alergias:</strong> {{ data.alergias }}</p>
+    <p><strong>Enfermedades</strong> {{ data.enfermedades }}</p>
+    <p><strong>Haz aceptado el tratamiento de datos</strong> {{ data.seguridad_asistencia }}</p>
     
     <form action="{{ url_for('finalize_registration') }}" method="post">
-        <input type="submit" value="Confirm and Register">
-    </form>
-    <a href="{{ url_for('select_team') }}">Go Back</a>
+        <input type="submit" value="Confirmar y registrar" class="submit-button">
+    </form>    
+    <a href="{{ url_for('select_team') }}" class="back-link">¿Datos incorrectos? Regresar</a>
+    <footer>
+        Powered by <a href="https://www.instagram.com/novaeafit/" style="text-decoration: none; color: inherit;" target="_blank">NOVA EAFIT</a> 💜
+    </footer>    
 </body>
 </html>

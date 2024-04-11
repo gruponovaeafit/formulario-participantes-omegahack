@@ -12,171 +12,57 @@ body {
 
 .container {
    width: 100%;
-   max-width: 800px;
-   margin: 20px auto;
-   padding-top: 20px;
-}
-
-.progress-bar {
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   margin: 20px 0;
-   padding: 10px;
-   position: relative;
-}
-
-.step {
-   width: 40px;
-   height: 40px;
-   background-color: #8B53EA;
-   border-radius: 50%;
-   color: white;
-   line-height: 40px;
+   margin: 0 auto;
    text-align: center;
-   position: relative;
-   z-index: 2;
-   font-weight: bold;
-}
-
-.bar {
-   flex-grow: 2;
-   height: 10px;
-   padding-top: 2px;
-   margin: 10px;
-   background-color: #8B53EA;
-   z-index: 1;
-   border-radius: 10px;
-}
-
-.active {
-   background-color: #4B0082;
-}
-
-.bar.third-to-fourth {
-   background-color: white;
-}
-
-.step.active {
-   background-color: #8B53EA;
-   margin: 10px;
-}
-
-.bar.active {
-   background: linear-gradient(to right, #8B53EA, #8B53EA 50%, white 50%, white 100%);
 }
 
 h2 {
    text-align: center;
-   margin-bottom: 20px;
-   font-size: 30px;
+   margin-bottom: 50px;
+   margin-top: 50px;
+   color: white;
+   font-size: 60px;
    font-weight: bold;
 }
+
 
 p {
    text-align: center;
-   margin-bottom: 20px;
+   margin-bottom: 10px;
    font-size: 18px;
 }
 
-form {
-   padding: 20px;
-   margin-top: 20px;
-}
 
-fieldset {
-   border-color: transparent;
-   background-color: transparent;
-   padding: 0;
-   margin: 0;
-   border: 0;
-}
+   .submit-button {
+      background-image: linear-gradient(to right, #2177fe, #4f5efe, #8a43f7, #8B53EA, #d54bbd);
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 20px;
+      text-transform: uppercase;
+      font-weight: bold;
+      outline: none;
+      transition: background-color 0.3s ease;
+      margin: 20px auto;
+      width: auto;
+      display: flex;
 
-legend {
-   color: white;
-   max-width: 350px;
-   padding-bottom: 30px;
-   text-align: center;
-}
+   }
 
-.avatar-grid {
-   display: flex;
-   justify-content: center;
-   margin: 20px 0;
-}
+   .submit-button:hover {
+      opacity: 0.9;
+   }
 
-.avatar-grid img {
-   max-width: 50%;
-   height: auto;
-}
-
-
-.title {
-   margin-bottom: 10px;
-   font-size: 16px;
-}
-
-.status-circle {
-   position: absolute;
-   top: 10px; 
-   right: 10px; 
-   width: 20px; 
-   height: 20px; 
-   border-radius: 50%;
-}
-
-
-input[type="radio"] {
-   display: none;
-}
-
-
-
-.checkbox-hidden {
-   display: none;
-}
-
-
-.status-circle {
-   width: 20px;
-   height: 20px;
-   border-radius: 50%;
-   background-color: grey;
-   position: absolute;
-   top: 10px;
-   right: 10px;
-}
-
-
-input[type="radio"]:checked+.avatar-label .status-circle {
-   background-color: #78BD56;
-}
-
-input[type="checkbox"]:checked+.avatar-label .status-circle {
-   background-color: #78BD56;
-}
-
-
-.submit-button {
-   background-image: linear-gradient(to right, #2177fe, #4f5efe, #8a43f7, #8B53EA, #d54bbd);
-   color: white;
-   border: none;
-   padding: 15px 30px;
-   border-radius: 30px;
-   cursor: pointer;
-   font-size: 20px;
-   text-transform: uppercase;
-   font-weight: bold;
-   outline: none;
-   transition: background-color 0.3s ease;
-   margin: 20px auto;
-   width: auto;
-   display: flex;
-
-}
-
-.submit-button:hover {
-   opacity: 0.9;
+   .back-link {
+      font-weight: bold; 
+      padding: 10px 20px; 
+      display: block; 
+      text-align: center; 
+      margin: 0 auto; 
+      width: fit-content; 
+      color: white;
 }
 
 
@@ -186,9 +72,6 @@ footer {
    color: white;
    margin-bottom: 20px;
 }
-
-
-
 
 @media (max-width: 600px) {
    .container {
