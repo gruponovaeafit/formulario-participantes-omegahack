@@ -27,9 +27,15 @@ h2 {
 }
 
 p {
+   max-width: 600px; /* This controls the maximum width of the paragraph */
+   line-height: 1.6; /* This controls the spacing between lines */
+   margin-left: auto; /* These two margin properties center the paragraph */
+   margin-right: auto;
    text-align: center;
    margin-bottom: 10px;
    font-size: 18px;
+   font-weight: bold;
+
 }
 
 
