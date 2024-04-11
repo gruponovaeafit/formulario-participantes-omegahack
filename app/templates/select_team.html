@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select Team</title>
-    <link rel="icon" href="{{ url_for('static', filename='images/icono.png') }}">
-    <!-- Bootstrap CSS for styling; adjust or remove as needed -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/team_selection.css') }}"
+    />
+    <title>Seleccionar Equipo</title>
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/icono.png') }}"
+    />
+  </head>
+  <body>
     <div class="container mt-5">
-        <h2>Select Your Team</h2>
-        <form method="POST">
-            {{ form.hidden_tag() }}
-            <div class="form-group">
-                {{ form.equipo.label(class_="form-label") }}
-                {{ form.equipo(class_="form-control") }}
-                {% if form.equipo.errors %}
-                    <div class="alert alert-danger">
-                        {% for error in form.equipo.errors %}
-                            <p>{{ error }}</p>
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            </div>
-            <div class="form-group">
-                {{ form.submit(class_="btn btn-primary") }}
-            </div>
-        </form>
+      <h2>Selecciona tu equipo</h2>
+      <form method="POST">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+          <p class="textico">
+            Por favor selecciona el grupo al que perteneces, recuerda que la
+            OmegaHack será este 13 y 14 de Abril
+          </p>
+          <br />
+          {{ form.equipo(class_="form-control") }} {% if form.equipo.errors %}
+          <div class="alert alert-danger">
+            {% for error in form.equipo.errors %}
+            <p>{{ error }}</p>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        <div class="form-group">{{ form.submit(class_="submit-button") }}</div>
+      </form>
+      <footer>
+        Powered by <a href="https://www.instagram.com/novaeafit/" style="text-decoration: none; color: inherit;" target="_blank">NOVA EAFIT</a> 💜
+    </footer>        
     </div>
-    <!-- Optional Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+  </body>
 </html>

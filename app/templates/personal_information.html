@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Información Personal</title>
-    <link rel="icon" href="{{ url_for('static', filename='images/icono.png') }}">
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/icono.png') }}"
+    />
     <!-- Include Bootstrap CSS for styling (optional) -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
     <div class="container mt-5">
-        <h2>Personal Information</h2>
-        <form method="POST">
-            {{ form.hidden_tag() }}
+      <h2>Personal Information</h2>
+      <form method="POST">
+        {{ form.hidden_tag() }}
 
-            <div class="form-group">
-                {{ form.nombre.label(class="form-label") }}
-                {{ form.nombre(class="form-control") }}
-                {% if form.nombre.errors %}
-                    <div class="alert alert-danger">{{ form.nombre.errors[0] }}</div>
-                {% endif %}
-            </div>
+        <div class="form-group">
+          {{ form.nombre.label(class="form-label") }} {{
+          form.nombre(class="form-control") }} {% if form.nombre.errors %}
+          <div class="alert alert-danger">{{ form.nombre.errors[0] }}</div>
+          {% endif %}
+        </div>
 
-            <!-- Add more form fields here -->
-            {% for field in form if field.name != 'nombre' and field.type != 'CSRFToken' %}
-                <div class="form-group">
-                    {{ field.label(class="form-label") }}
-                    {{ field(class="form-control") }}
-                    {% if field.errors %}
-                        <div class="alert alert-danger">{{ field.errors[0] }}</div>
-                    {% endif %}
-                </div>
-            {% endfor %}
-        </form>
+        <!-- Add more form fields here -->
+        {% for field in form if field.name != 'nombre' and field.type !=
+        'CSRFToken' %}
+        <div class="form-group">
+          {{ field.label(class="form-label") }} {{ field(class="form-control")
+          }} {% if field.errors %}
+          <div class="alert alert-danger">{{ field.errors[0] }}</div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </form>
     </div>
 
     <!-- Optional: Include Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-</body>
+  </body>
 </html>

@@ -3,11 +3,13 @@ body {
    padding: 0;
    font-family: 'Montserrat', sans-serif;
    font-style: normal;
-   background-image: url('/static/images/cuadros.png');
+   background-image: url('/static/images/Degradado.png');
    color: white;
    display: flex;
    flex-direction: column;
    background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
 }
 
 .container {
@@ -18,72 +20,29 @@ body {
 }
 
 
-.progress-bar {
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   margin: 20px 0;
-   padding: 10px;
-   position: relative;
-}
-
-.step {
-   width: 40px;
-   height: 40px;
-   background-color: #8B53EA;
-   border-radius: 50%;
-   color: white;
-   line-height: 40px;
+h2 {
    text-align: center;
-   position: relative;
-   z-index: 2;
-   font-weight: bold;
-}
-
-.bar {
-   flex-grow: 2;
-   height: 10px;
-   padding-top: 2px;
-   margin: 10px;
-   background-color: #8B53EA;
-   z-index: 1;
-   border-radius: 10px;
-}
-
-.active {
-   background-color: #4B0082;
-}
-
-.bar.third-to-fourth {
-   background-color: #8B53EA;
-}
-
-.step.active {
-   background-color: #8B53EA;
-   margin: 10px;
-}
-
-.bar.active {
-   background: linear-gradient(to right, #8B53EA, #8B53EA 50%, white 50%, white 100%);
-}
-
-h1 {
-   text-align: center;
-   margin-bottom: 10px;
+   margin-bottom: 50px;
+   margin-top: 50px;
    color: white;
    font-size: 40px;
    font-weight: bold;
 }
 
-h2 {
-   text-align: left;
-   margin-bottom: 10px;
-   color: white;
-   font-size: 25px;
+.textico{
+   font-size: 14px;
+   max-width: 600px;
+   margin: 10px auto;
+   margin-bottom: 20px;
+   margin-top: 30;
+   line-height: 1.6;
+   text-align: justify;
    font-weight: bold;
+   text-align: center;
 }
 
-form {
+
+form-label {
    width: 100%;
    padding: 20px;
    box-sizing: border-box;
@@ -105,32 +64,7 @@ legend {
    text-align: center;
    margin-bottom: 20px;
 }
-
-h1 {
-   text-align: center;
-   margin-bottom: 20px;
-   color:
-      linear-gradient(#000000 0 0) padding-box,
-      linear-gradient(145deg, #DE386A, #8B53EA, #5DC6ED) border-box;
-   font-size: 30px;
-   font-weight: bold;
-}
-
-.selection-area, .creation-area {
-   margin-bottom: 20px;
-}
-
-select.team-select::-webkit-dropdown-arrow {
-   color: white;
-}
-
-select.team-select option {
-   background-color: black;
-   color: white;
-}
-
-
-.team-select, .new-team-input {
+.form-control, .new-team-input {
    border-radius: 15px;
    padding: 15px;
    background-color: #000;
@@ -141,13 +75,14 @@ select.team-select option {
    color: #ffffffcd;
    border: 5px solid transparent;
    border-radius: 15px;
-   display: inline-block;
-   margin: 10px 0;
+   display: block; /* Cambiado de inline-block a block para permitir el uso de width y margin auto */
+   margin: 30px auto; /* Actualizado para centrar el elemento horizontalmente */
    font-size: 14px;
    outline: none;
    -webkit-appearance: none;
-   /* Para deshabilitar el estilo por defecto en navegadores WebKit */
    appearance: none;
+   width: 90%; 
+   margin-bottom: 200px;
 }
 
 
@@ -166,6 +101,8 @@ select.team-select option {
    margin: 20px auto;
    width: auto;
    display: flex;
+   margin-top: 100px;
+   margin-bottom: 100px;
 
 }
 
@@ -174,43 +111,25 @@ select.team-select option {
 }
 
 footer {
-   color: white;
    text-align: center;
    margin-top: 20px;
+   color: white;
+   margin-bottom: 200px;
+   margin-top: 40px;
 }
-
 @media (max-width: 600px) {
    .container {
       width: 90%;
       margin: 10px auto;
    }
 
-   .progress-bar {
-      margin: 10px 0;
-   }
-
-   .avatar-options {
-      grid-template-columns: 1fr;
-   }
-
-   .avatar-option {
-      padding: 10px;
-   }
-
-   .avatar-label .title {
-      font-size: 12px;
-   }
-
-   .avatar-label img {
-      width: 60px;
-   }
 
    .submit-button {
       padding: 10px 20px;
       font-size: 16px;
    }
 
-   .team-select {
+   .form-control{
       padding: 10px;
       font-size: 14px;
       width: 100%;
@@ -229,7 +148,7 @@ footer {
       color: white;
    }
 
-   .team-select option, .new-team-input option {
+   .form-control option, .new-team-input option {
       background-color: black;
       color: white;
    }
