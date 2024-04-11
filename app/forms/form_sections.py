@@ -38,7 +38,7 @@ class PersonalInformationForm(FlaskForm):
                                       choices=[('yes', 'Sí'), ('no', 'No')],
                                       validators=[DataRequired(message="Debe seleccionar una opción.")])
     def validate_semestre(self, field):
-        if field.data < 1 or field.data > 10:
-            raise ValidationError("El semestre debe estar entre 1 y 10.")
+        if field.data < 1 or field.data > 20:
+            raise ValidationError("El semestre debe estar entre 1 y 20.")
     
     submit = SubmitField('Continuar')

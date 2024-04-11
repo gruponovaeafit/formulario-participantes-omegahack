@@ -72,7 +72,7 @@ def registration_confirmation():
         'alergias': personal_info.get('alergias', 'N/A'),
         'enfermedades': personal_info.get('enfermedades', 'N/A'),
         'numero_contacto_emergencia': personal_info.get('numero_contacto_emergencia', 'N/A'),
-        'seguridad_asistencia': 'Yes' if personal_info.get('seguridad_asistencia') else 'No'
+        'seguridad_asistencia': 'Sí' if personal_info.get('seguridad_asistencia') else 'No'
     }
 
     return render_template('registration_confirmation.html', data=data)

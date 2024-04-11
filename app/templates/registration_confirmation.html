@@ -21,11 +21,11 @@
     <p><strong>Semestre:</strong> {{ data.semestre }}</p>
     <p><strong>EPS:</strong> {{ data.eps }}</p>
     <p><strong>Número de celular:</strong> {{ data.contacto_emergencia }}</p>
-    <p><strong>Numero contacto de emergencia</strong> {{ data.numero_contacto_emergencia }}</p>
+    <p><strong>Numero contacto de emergencia:</strong> {{ data.numero_contacto_emergencia }}</p>
     <p><strong>Parentesco:</strong> {{ data.parentesco_contacto_emergencia }}</p>
     <p><strong>Alergias:</strong> {{ data.alergias }}</p>
-    <p><strong>Enfermedades</strong> {{ data.enfermedades }}</p>
-    <p><strong>Haz aceptado el tratamiento de datos</strong> {{ data.seguridad_asistencia }}</p>
+    <p><strong>Enfermedades:</strong> {{ data.enfermedades }}</p>
+    <p><strong>Seguridad de asistencia al evento:</strong> {{ data.seguridad_asistencia }}</p>
     
     <form action="{{ url_for('finalize_registration') }}" method="post">
         <input type="submit" value="Confirmar y registrar" class="submit-button">
