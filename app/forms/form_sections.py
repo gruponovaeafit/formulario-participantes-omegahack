@@ -27,7 +27,7 @@ class TeamSelectionForm(FlaskForm):
 class PersonalInformationForm(FlaskForm):
     # Assuming the 'nombre' field will be filled based on the previous selection
     nombre = SelectField('Nombre Completo', coerce=int, validators=[DataRequired()])
-    semestre = IntegerField('Semestre', validators=[DataRequired(), NumberRange(min=1, max=10, message="El semestre debe estar entre 1 y 10.")])
+    semestre = IntegerField('Semestre', validators=[DataRequired(), NumberRange(min=1, max=20, message="El semestre debe estar entre 1 y 20.")])
     eps = StringField('EPS', validators=[DataRequired()])
     contacto_emergencia = StringField('Número de Celular', validators=[DataRequired()])
     alergias = StringField('Alergias', validators=[DataRequired()])
