@@ -17,6 +17,52 @@ body {
    padding-top: 20px;
 }
 
+.radio-options {
+   display: inline-block; /* Permite que los elementos dentro se alineen a la derecha */
+   margin: 20px auto;
+   padding-top: 20px;
+
+}
+
+.custom-radio {
+   display: inline-flex;
+   align-items: center;
+   margin-left: 50px; /* Espacio entre los botones de radio */
+}
+
+.radio-label {
+   position: relative;
+   padding-left: 50px; 
+   cursor: pointer;
+   display: flex; /* Utiliza flex para alinear los textos con los círculos */
+   align-items: center;
+}
+
+.radio-label:before {
+   content: '';
+   position: absolute;
+   top: 50%;
+   right: -30px; 
+   transform: translateY(-50%);
+   height: 20px;
+   width: 20px;
+   border: 2px solid #ccc;
+   border-radius: 50%;
+   background-color: #fff;
+}
+
+.radio-input {
+   display: none; 
+}
+
+.radio-input:checked + .radio-label:before {
+   background-color: #78BD56;
+   border-color: #78BD56;
+}
+.radio-input:not(:checked) + .radio-label:before {
+   background-color: #fff;
+   border-color: #ccc;
+}
 
 h2 {
    text-align: center;
@@ -40,6 +86,7 @@ fieldset {
    width: calc(100% - 30px);
    margin: 15px auto;
    padding: 15px;
+   font-size: 18px;
 }
 
 .form-control {
@@ -165,5 +212,12 @@ footer {
      height: 15px;
      width: 15px;
    }
+
+   .radio-options{
+      margin: 20px auto;
+   padding-top: 20px;
+   }
  }
+
+
  
