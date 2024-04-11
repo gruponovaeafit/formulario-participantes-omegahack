@@ -1,0 +1,92 @@
+body {
+   margin: 0;
+   padding: 0;
+   font-family: 'Montserrat', sans-serif;
+   font-style: normal;
+   background-image: url('/static/images/Degradado.png');
+   color: white;
+   display: flex;
+   flex-direction: column;
+   background-size: cover;
+}
+
+.container {
+   width: 100%;
+   max-width: 800px;
+   margin: 20px auto;
+   padding-top: 20px;
+}
+
+h2 {
+   text-align: center;
+   margin-bottom: 50px;
+   margin-top: 50px;
+   color: white;
+   font-size: 60px;
+   font-weight: bold;
+}
+
+p {
+   text-align: center;
+   margin-bottom: 10px;
+   font-size: 18px;
+}
+
+
+.avatar-grid {
+   display: flex;
+   justify-content: center;
+   margin: 20px 0;
+}
+
+.avatar-grid img {
+   max-width: 20%;
+   height: auto;
+}
+
+.submit-button {
+   background-image: linear-gradient(to right, #2177fe, #4f5efe, #8a43f7, #8B53EA, #d54bbd);
+   color: white;
+   border: none;
+   padding: 15px 30px;
+   border-radius: 30px;
+   cursor: pointer;
+   font-size: 20px;
+   text-transform: uppercase;
+   font-weight: bold;
+   outline: none;
+   transition: background-color 0.3s ease;
+   margin: 20px auto;
+   width: auto;
+   display: flex;
+
+}
+
+.submit-button:hover {
+   opacity: 0.9;
+}
+
+
+footer {
+   text-align: center;
+   margin-top: 20px;
+   color: white;
+   margin-bottom: 20px;
+}
+
+
+@media (max-width: 600px) {
+   .container {
+      width: 90%;
+      margin: 10px auto;
+   }
+
+   .progress-bar {
+      margin: 10px 0;
+   }
+
+   .submit-button {
+      padding: 10px 20px;
+      font-size: 16px;
+   }
+}

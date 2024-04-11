@@ -1,12 +1,49 @@
+
 <!DOCTYPE html>
-<link rel="icon" href="{{ url_for('static', filename='images/icono.png') }}">
-<html>
-<head>
-    <title>Registration Successful</title>
-</head>
-<body>
-    <h1>Registration Successful!</h1>
-    <p>Your registration has been successfully submitted.</p>
-    <a href="{{ url_for('main_page') }}">Return to Home</a>
-</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/success.css') }}"
+    />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/icono.png') }}"
+    />
+    <title>Confirmación de Inscripción</title>
+  </head>
+
+      {% block content %}
+      <h2>¡Felicidades!</h2>
+      <p class="confirmation-message">
+        Gracias por registrarte, tu participación en la OmegaHack está confirmada.<br />
+      </p>
+      <div class="avatar-grid">
+        <img
+          src="{{ url_for('static', filename='images/roles.png') }}"
+          alt="Roles"
+        />
+      </div>
+
+      <button
+        class="submit-button"
+        onclick="location.href='{{ url_for('main_page') }}'"
+      >
+        Regresar al inicio
+      </button>
+      <footer>
+        Powered by
+        <a
+          href="https://www.instagram.com/novaeafit/"
+          style="text-decoration: none; color: inherit"
+          target="_blank"
+          >NOVA EAFIT</a
+        >
+        💜
+      </footer>
+      {% endblock %}
+    </div>
+  </body>
 </html>
