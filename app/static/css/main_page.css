@@ -38,6 +38,9 @@ p {
    height: auto;
 }
 
+.error {
+   margin: 30px auto;
+}
 
 button {
    background-image: linear-gradient(to right, #2177fe, #4f5efe, #8a43f7, #8B53EA, #d54bbd);

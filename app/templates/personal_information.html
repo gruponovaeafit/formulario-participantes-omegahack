@@ -8,18 +8,16 @@
       rel="icon"
       href="{{ url_for('static', filename='images/icono.png') }}"
     />
-    <!-- Include Bootstrap CSS for styling (optional) -->
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      href="{{ url_for('static', filename='css/user_details.css') }}"
     />
   </head>
   <body>
     <div class="container mt-5">
-      <h2>Personal Information</h2>
+      <h2>Información Personal</h2>
       <form method="POST">
         {{ form.hidden_tag() }}
-
         <div class="form-group">
           {{ form.nombre.label(class="form-label") }} {{
           form.nombre(class="form-control") }} {% if form.nombre.errors %}
@@ -27,7 +25,6 @@
           {% endif %}
         </div>
 
-        <!-- Add more form fields here -->
         {% for field in form if field.name != 'nombre' and field.type !=
         'CSRFToken' %}
         <div class="form-group">
@@ -37,12 +34,31 @@
           {% endif %}
         </div>
         {% endfor %}
+
+    <!-- Custom checkbox for terms and conditions -->
+<div class="checkito">
+  <label for="acceptTerms" class="checkito2">
+      He leído y acepto los términos y condiciones
+      <input type="checkbox" id="acceptTerms" name="acceptTerms" class="checkbox-input" />
+      <span class="checkbox-custom-circle"></span>
+  </label>
+</div>
+
+        <!-- Submit button -->
+        <div class="form-group">
+          <button type="submit" class="submit-button">Enviar</button>
+        </div>
       </form>
     </div>
-
-    <!-- Optional: Include Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <footer>
+      Powered by
+      <a
+        href="https://www.instagram.com/novaeafit/"
+        style="text-decoration: none; color: inherit"
+        target="_blank"
+        >NOVA EAFIT</a
+      >
+      💜
+    </footer>
   </body>
 </html>
