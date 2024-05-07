@@ -1,21 +1,21 @@
-# Formulario de inscripción. OmegaHack
+<h1 align="center">Formulario Participantes OmegaHack 2024 <img src="https://i.imgur.com/VmDq6UM.png" width="60"/> </h1>
+
+Bienvenido al repositorio del Formulario de Participantes de OmegaHack 2024. Este proyecto fue desarrollado por el Grupo Estudiantil NOVA, de la Universidad EAFIT, en el semestre 2024-1. En este repositorio encontrarás toda la información relacionada con el desarrollo del proyecto, desde la problemática hasta la solución propuesta por el equipo.
+
+Este proyecto hace parte de la ejecución del proyecto "Formulario Inscripción OmegaHack 2024", el cual constó de dos (2) desarrollos: el formulario de inscripción y el formulario de participantes. Este repositorio corresponde al desarrollo del formulario de participantes. Para más información sobre el desarrollo del formulario de inscripción, puedes acceder al siguiente [repositorio](https://github.com/gruponovaeafit/hackaton-2024). Ambos repositorios contienen la misma información relacionada al desarrollo y ejecución del proyecto.
+
 ## Equipo
-* Zcharick Romero: Diseñadora
-* Stiven Gómez: Diseñador
-* Julián Agudelo: Desarrollador
-* Katherin Allín: Analísta
-* Kevin Quiroz: Desarrollador
-* Alejandro Ríos: Desarrollador
-* Manuela Caro: Líder de Proyecto
+
+<img src="https://i.imgur.com/i6GvBGq.png"/>
 
 
 ## Problemática
 
-En el semestre 2024-1 se desarrollará el evento La OmegaHack, creado por el grupo estudiantil Nova. Para este evento, en aspectos logísticos, se necesitaba almacenar la información de los participantes para la creación de equipos, distribución de información y se almacena los datos para posuble estudio para futuras Omegahack´s.
+Durante el primer semestre de 2024 se llevará a cabo el evento La OmegaHack, organizado por el Grupo Estudiantil NOVA. En lo que respecta a los aspectos logísticos, será necesario almacenar la información de los participantes con el fin de formar equipos, distribuir información y conservar los datos para estudios futuros que podrían mejorar las ediciones siguientes de La OmegaHack.
 
 ## Solución
 
-Se decidió crear un formulario, propio del grupo estudiantil Nova, para el almacenamiento de datos de los participantes en el evento OmegaHack. Donde, por decisión propia del equipo, se hizo el formulario desde cero. Utilizando Figma para la creación del diseño, Flask y FlaskWTF para el backend, HTML y CSS (sin ninguna librería) para el frontend y Azure para la base de datos.
+Se decidió que el Grupo Estudiantil NOVA desarrollara un formulario personalizado para el almacenamiento de datos de los participantes. Este formulario fue diseñado desde cero mediante un análisis técnico exhaustivo. Se utilizó Figma para la creación del diseño, mientras que el backend fue desarrollado con Flask y Flask-WTF. Para el frontend, se optó por HTML y CSS puro, sin la inclusión de librerías adicionales. Finalmente, se eligió Azure SQL como la plataforma para la infraestructura de la base de datos.
 
 ## Desarrollo
 
